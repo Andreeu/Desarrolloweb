@@ -1,0 +1,19 @@
+<?php
+
+Class Blog extends CI_Controller {
+	public function __construct()
+{
+parent::__construct();
+$this->load.model(.Blogmodel.);
+}
+public function list(){
+$list = $this->Blogmodel-> get_last_ten_entries();
+$this->load->view(.list.,array(.entries. => $list));
+}
+public function byid($id){
+$entry= $this->Blogmodel-> getbyid($id);
+$this->load->view(.list.,array(.singleentry. => $entry));
+}
+}
+}
+?>
